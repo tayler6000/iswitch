@@ -1,0 +1,3 @@
+# Example internal hosts file
+127.0.0.1       mywebsite.com
+192.168.1.5     ns1.mywebsite.com
