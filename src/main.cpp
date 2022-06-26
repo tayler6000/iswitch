@@ -11,6 +11,8 @@ int main(int cargs, char* args[]){
         internal();
     }else if(choice == "external"){
         external();
+    }else if(choice == "--version"){
+        version();
     }else{
         help(args[0]);
     }

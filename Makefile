@@ -1,21 +1,21 @@
 EXE = iswitch
 default: bin main.o helpers.o
 	g++ -o bin/$(EXE) main.o helpers.o -static
-main.o:
+main.o: src/main.cpp
 	g++ -c -o main.o src/main.cpp -static
-helpers.o:
+helpers.o: src/helpers.cpp src/helpers.hpp
 	g++ -c -o helpers.o src/helpers.cpp -static
 win64: bin main.win64.o helpers.win64.o
 	x86_64-w64-mingw32-g++ -o bin/$(EXE).x86_64.exe main.win64.o helpers.win64.o -static
-main.win64.o:
+main.win64.o: src/main.cpp
 	x86_64-w64-mingw32-g++ -c -o main.win64.o  src/main.cpp -static
-helpers.win64.o:
+helpers.win64.o: src/helpers.cpp src/helpers.hpp
 	x86_64-w64-mingw32-g++ -c -o helpers.win64.o  src/helpers.cpp -static
 win32: bin main.win32.o helpers.win32.o
 	i686-w64-mingw32-g++ -o bin/$(EXE).i686.exe main.win32.o helpers.win32.o -static
-main.win32.o:
+main.win32.o: src/main.cpp
 	i686-w64-mingw32-g++ -c -o main.win32.o  src/main.cpp -static
-helpers.win32.o:
+helpers.win32.o: src/helpers.cpp src/helpers.hpp
 	i686-w64-mingw32-g++ -c -o helpers.win32.o  src/helpers.cpp -static
 bin:
 	mkdir bin
@@ -26,8 +26,8 @@ ifneq ($(shell id -u), 0)
 else
 	cp bin/$(EXE) /etc/$(EXE)
 	cp /etc/hosts /etc/hosts.iswitch.backup
-	cp /etc/hosts /etc/internal.txt
-	cp /etc/hosts /etc/external.txt
+	cp /etc/hosts /etc/internal.config
+	cp /etc/hosts /etc/external.config
 	cp helpers/linux/iswitch.sh /bin/iswitch
 endif
 uninstall:

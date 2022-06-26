@@ -13,8 +13,8 @@ UninstPage instfiles
 Section "main"
 	SetOutPath "C:\Windows\System32\drivers\etc"
 	File /oname=iswitch.exe "iswitch.x86_64.exe" 
-    CopyFiles C:\Windows\System32\drivers\etc\hosts C:\Windows\System32\drivers\internal.txt
-    CopyFiles C:\Windows\System32\drivers\etc\hosts C:\Windows\System32\drivers\external.txt
+    CopyFiles C:\Windows\System32\drivers\etc\hosts C:\Windows\System32\drivers\etc\internal.config
+    CopyFiles C:\Windows\System32\drivers\etc\hosts C:\Windows\System32\drivers\etc\external.config
 	SetOutPath "$PROGRAMFILES64\iswitch"
 	File "iswitch.bat"
 	File "PathEd.exe"
@@ -22,7 +22,7 @@ Section "main"
 	Delete "$PROGRAMFILES64\iswitch\PathEd.exe"
 	WriteUninstaller "$PROGRAMFILES64\iswitch\uninstall.exe"
 	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\iswitch" "DisplayName" "iswitch (64-bit)"
-	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\iswitch" "DisplayVersion" "1.0.1"
+	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\iswitch" "DisplayVersion" "1.1.0"
 	WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\iswitch" "NoModify" 0x00000001
 	WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\iswitch" "NoRepair" 0x00000001
 	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\iswitch" "UninstallString" "$PROGRAMFILES64\iswitch\uninstall.exe"
