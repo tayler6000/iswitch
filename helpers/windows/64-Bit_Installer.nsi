@@ -22,7 +22,7 @@ Section "main"
 	Delete "$PROGRAMFILES64\iswitch\PathEd.exe"
 	WriteUninstaller "$PROGRAMFILES64\iswitch\uninstall.exe"
 	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\iswitch" "DisplayName" "iswitch (64-bit)"
-	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\iswitch" "DisplayVersion" "1.0.0"
+	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\iswitch" "DisplayVersion" "1.0.1"
 	WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\iswitch" "NoModify" 0x00000001
 	WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\iswitch" "NoRepair" 0x00000001
 	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\iswitch" "UninstallString" "$PROGRAMFILES64\iswitch\uninstall.exe"
