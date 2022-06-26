@@ -1,5 +1,5 @@
 Name "iswitch"
-OutFile "C:\Users\Tayler Porter\Desktop\iswitch\installer.x32.exe"
+OutFile "installer.x32.exe"
 
 Page license
 LicenseData "LICENSE.txt"
